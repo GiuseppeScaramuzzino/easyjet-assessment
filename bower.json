@@ -1,0 +1,34 @@
+{
+  "name": "EasyJet Test",
+  "description": "Assessment test Easy Jet",
+  "main": "index.html",
+  "keywords": [
+    "easyjet",
+    "Test",
+    "assessment"
+  ],
+  "authors": [
+    "Giuseppe Scaramuzzino"
+  ],
+  "license": "MIT",
+  "homepage": "http://www.easyjet.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0",
+    "gulp": "^3.9.1",
+    "requirejs": "^2.3.2",
+    "require-css": "^0.1.8",
+    "angular": "^1.5.8",
+    "angular-route": "^1.5.8",
+    "angular-block-ui": "^0.2.2",
+    "angular-ui-bootstrap": "ui-bootstrap#^2.2.0",
+    "angular-bootstrap": "^2.2.0"
+  }
+}
