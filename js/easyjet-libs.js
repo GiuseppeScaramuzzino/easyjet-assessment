@@ -1,7 +1,13 @@
-define([], function () {
+require("angular");
+require("angular-block-ui");
+require("../node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls");
+
+(function () {
   var EasyJetAppLibs = angular.module("EasyJetAppLibs", ['blockUI', 'ui.bootstrap']);
 
-  angular.module('EasyJetAppLibs').config(function (blockUIConfig) {
+  EasyJetAppLibs.config(blockUIConfig);
+
+  function blockUIConfig() {
 
     blockUIConfig.message = 'Please wait!';
 
@@ -9,7 +15,6 @@ define([], function () {
 
     blockUIConfig.blockBrowserNavigation = true;
 
-  });
-
-  return EasyJetAppLibs;
-});
+  }; //blockUIConfig
+}());
+if (typeof module !== "undefined") module.exports = "EasyJetAppLibs";

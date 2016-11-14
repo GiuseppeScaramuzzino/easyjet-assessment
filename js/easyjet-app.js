@@ -1,5 +1,6 @@
-define([], function () {
-  var EasyJetAppModule = angular.module('EasyJetAppModule', ['EasyJetAppRoute', 'EasyJetAppLibs']);
+require("angular");
+require("./easyjet-route");
+require("./easyjet-libs");
+require("../css/style.less");
 
-  return EasyJetAppModule;
-});
+var EasyJetAppModule = angular.module('EasyJetAppModule', ['EasyJetAppRoute']);
