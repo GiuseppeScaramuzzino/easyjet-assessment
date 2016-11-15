@@ -1,34 +1,41 @@
 {
   "name": "easyjet-assessment",
-  "description": "Assessment test Easy Jet",
   "version": "1.0.0",
+  "description": "Easyjet Assessment",
   "main": "index.html",
   "dependencies": {
-    "angular": "1.5.8",
-    "angular-block-ui": "0.2.2",
-    "angular-bootstrap": "2.2.0",
-    "angular-route": "1.5.8",
-    "angular-ui-bootstrap": "^2.2.0",
-    "bootstrap": "3.3.7",
-    "css-loader": "0.25.0",
-    "font-awesome": "4.7.0",
-    "gulp": "3.9.1",
-    "jquery": "^3.1.1",
-    "style-loader": "0.13.1",
-    "webpack": "1.13.3"
+    "gulp-bower": "^0.0.13",
+    "gulp": "^3.9.1",
+    "gulp-jshint": "^2.0.4",
+    "gulp-clean": "^0.3.2",
+    "gulp-watch-less": "^1.0.1",
+    "gulp-less": "^3.3.0",
+    "jshint": "^2.9.4"
   },
   "devDependencies": {
-    "less": "^2.7.1",
-    "less-loader": "^2.2.3"
+    "gulp": "^3.9.1",
+    "gulp-bower": "0.0.13",
+    "gulp-clean": "^0.3.2",
+    "gulp-jshint": "^2.0.4",
+    "gulp-less": "^3.3.0",
+    "gulp-watch-less": "^1.0.1",
+    "jshint": "^2.9.4"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/ngScara/easyjet-assessment.git"
+  },
   "keywords": [
     "easyjet",
-    "Test",
-    "assessment"
+    "angular"
   ],
   "author": "Giuseppe Scaramuzzino",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/ngScara/easyjet-assessment/issues"
+  },
+  "homepage": "https://gitlab.com/ngScara/easyjet-assessment#README"
 }
