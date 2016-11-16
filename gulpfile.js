@@ -6,7 +6,7 @@ var less = require('gulp-less');
 var path = require('path');
 var jshint = require('gulp-jshint');
 
-gulp.task('default', ['bower', 'less.style', 'less.html'], function () {
+gulp.task('default', ['bower', 'less'], function () {
 
 });
 
@@ -22,16 +22,10 @@ gulp.task('bower', function () {
   return bower();
 });
 
-gulp.task('less.style', function () {
-  return gulp.src('less/*.less')
-    .pipe(watchLess('less/*.less'))
-    .pipe(less())
-    .pipe(gulp.dest('css'));
-});
 
-gulp.task('less.html', function () {
-  return gulp.src('view/**/*.less')
-    .pipe(watchLess('view/**/*.less'))
+gulp.task('less', function () {
+  gulp.src('**/**/*.less')
+    .pipe(watchLess('**/**/*.less'))
     .pipe(less())
     .pipe(gulp.dest(function (file) {
       return file.base;

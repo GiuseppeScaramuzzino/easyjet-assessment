@@ -1,16 +1,13 @@
-module.exports = {
-  'dependencies': ['$scope']
-};
+define([], function () {
 
-//var controller = require("./results.controller");
-//controller.$inject = ["$scope"];
-//angular.module("EasyJetAppModule").controller("ResultsController", controller);
+  angular.module("AppModule").register.controller('ResultsController', ResultsController);
 
+  ResultsController.$inject = ["$scope"];
 
-angular.module("EasyJetAppModule").controller("ResultsController", ResultsController);
-ResultsController.$inject = ["$scope"];
-
-function ResultsController($scope) {
-  var vm = this;
-  vm.msg = "It's works";
-}; //ResultsController
+  return {
+    pageView: "../view/results/results.html",
+    nameController: "ResultsController",
+    aliasController: 'rsCtrl',
+    pathController: ['../view/results/results.controller.js']
+  };
+});

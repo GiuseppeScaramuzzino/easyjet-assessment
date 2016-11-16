@@ -1,4 +1,3 @@
-//var AppLibs = angular.module("AppLibs", ['blockUI', 'ui.bootstrap']);
 "use strict";
 
 define([], function () {

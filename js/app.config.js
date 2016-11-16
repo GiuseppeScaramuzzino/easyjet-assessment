@@ -14,7 +14,8 @@ require.config({
     'app.libs': ['angular', 'angular-block-ui'],
     'angular-route': ['angular'],
     'angular-block-ui': ['angular'],
-    'angular-bootstrap': ['angular']
+    'angular-bootstrap': ['angular'],
+    'flight': ['app']
   },
 
   // alias libraries paths
@@ -37,7 +38,8 @@ require.config({
     ],
     'app': 'js/app',
     'app.route': 'js/app.route',
-    'app.libs': 'js/app.libs'
+    'app.libs': 'js/app.libs',
+    'flight': 'directives/flight/flight'
   },
 
   // kick start application

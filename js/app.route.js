@@ -2,18 +2,30 @@
 
 define([], function () {
 
-  var AppRoute = angular.module('AppRoute', ['ngRoute']);
+  configRoutes.$inject = ['$routeProvider', '$controllerProvider', '$provide', '$compileProvider', '$filterProvider'];
 
-  AppRoute.config(configRoutes);
+  function configRoutes($routeProvider, $controllerProvider, $provide, $compileProvider, $filterProvider) {
 
-  configRoutes.$inject = ['$routeProvider', '$controllerProvider'];
-
-  function configRoutes($routeProvider, $controllerProvider) {
-
-    /*AppRoute.register = {
+    angular.module("AppModule").register = {
       controller: $controllerProvider.register,
-      factory: $provide.factory
-    };*/
+      factory: $provide.factory,
+      directive: $compileProvider.directive,
+      filter: $filterProvider.register,
+      factory: $provide.factory,
+      service: $provide.service,
+      component: $compileProvider.component,
+    };
+
+    function getSettings(names) {
+      var settings = require(names);
+      console.log(settings);
+      return {
+        templateUrl: "../view/results/results.html",
+        controller: "ResultsController",
+        controllerAs: 'rsCtrl',
+        resolve: resolveController(["../view/results/results.settings"])
+      };
+    } //getSettings
 
     function resolveController(names) {
       return {
@@ -39,4 +51,6 @@ define([], function () {
         redirectTo: "/results",
       })
   }; //configRoutes
+  return configRoutes;
+
 });

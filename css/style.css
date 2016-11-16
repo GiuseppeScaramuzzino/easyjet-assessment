@@ -13,6 +13,9 @@ footer {
   padding: 20px 0px;
   background-color: #AfAfAf;
 }
-.portfolio-item {
-  margin-bottom: 25px;
+.navbar-brand {
+  padding: 9px;
+}
+.navbar-brand img {
+  height: 35px;
 }
