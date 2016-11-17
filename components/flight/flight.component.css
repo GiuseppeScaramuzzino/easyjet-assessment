@@ -1,0 +1,16 @@
+.portfolio-item {
+  margin-bottom: 25px;
+}
+
+.box-flight {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: rgba(238, 238, 238, 0.42);
+  height: 158px;
+  border: 1px solid rgba(255, 102, 0, 0.2);
+}
+
+.box-information {
+  background-color: #f60;
+  height: 31px;
+  font-size: 9pt;
+}

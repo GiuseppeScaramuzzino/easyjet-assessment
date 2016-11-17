@@ -1,0 +1,14 @@
+<div class="box-flight">
+  <div class="box-information">
+    <span class="pull-right" style="position: relative;padding-top: 5px;padding-right:2px;color:white"> {{flCtrl.element.flightNumber.carrierCode}} - {{flCtrl.element.flightNumber.number}} </span>
+    <div style="position: relative;left: 11px;top: 36px;"><strong>DEP</strong>
+      <span style="margin-left:5px">{{ flCtrl.element.localDepartureTime | date:'medium' }}</span>
+    </div>
+    <div style="top: 40px;position: relative;left: 10px;"><strong>ARR</strong>
+      <span style="margin-left:5px">{{ flCtrl.element.localArrivalTime | date:'medium' }}</span>
+    </div>
+  </div>
+  <div>
+    <span style="top: 75px;position: relative;font-size: 40px;left: 120px;">{{ flCtrl.element.prices.adult.value}} €</span>
+  </div>
+</div>

@@ -39,7 +39,7 @@ require.config({
     'app': 'js/app',
     'app.route': 'js/app.route',
     'app.libs': 'js/app.libs',
-    'flight': 'directives/flight/flight'
+    'flight': 'components/flight/flight.component'
   },
 
   // kick start application
