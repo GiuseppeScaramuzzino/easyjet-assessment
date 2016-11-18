@@ -9,6 +9,16 @@ define(['view/results/results.service', 'flight'], function () {
   function ResultsController(scope, service) {
     var vm = this;
     vm.flights = null;
+    vm.pager = {};    
+    vm.setPage = setPage;     
+
+    function setPage(page) {        
+      if (page < 1 || page > vm.pager.totalPages) {            
+        return;        
+      }             
+      vm.pager = service.GetPager(vm.flights.length, page);       
+      vm.items = vm.flights.slice(vm.pager.startIndex, vm.pager.endIndex + 1);    
+    }
 
     angular.element("#overlayBox").show();
 
@@ -17,6 +27,8 @@ define(['view/results/results.service', 'flight'], function () {
 
       if (response.complete) {
         vm.flights = response.data;
+        vm.setPage(1);    
+
       } else {
 
       }

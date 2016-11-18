@@ -1,51 +1,56 @@
-<div>
-  <!-- Page Heading -->
-  <div class="row">
+<!-- Page Heading -->
+<div class="row">
+  <div class="col-lg-12">
+    <h1 class="page-header">Results search
+      <small style="font-size: 40%;margin-top: 24px;" class="pull-right">
+        <a href="#">Modify search</a>
+      </small>
+  </h1>
+  </div>
+</div>
+<!-- /.row -->
+
+<!-- Projects Row -->
+<div class="row" ng-if="!rsCtrl.flights">
+  <div class="well">
+    <blockquote>
+      <p>No flight available...</p>
+      <small>Modify your search</small>
+    </blockquote>
+  </div>
+  <div class="text-center" style="font-size:16px; padding-top:40px;">
+    <a href="">Go back to search</a>
+  </div>
+</div>
+
+
+<div class="row" ng-if="rsCtrl.flights">
+  <div class="col-xs-6 col-sm-4 col-md-3 portfolio-item" ng-repeat="item in rsCtrl.flights">
+    <flight element="item"></flight>
+  </div>
+
+  <hr>
+
+  <!-- Pagination -->
+  <div class="row text-center">
     <div class="col-lg-12">
-      <h1 class="page-header">Results search
-        <small style="font-size: 40%;margin-top: 24px;" class="pull-right">
-          <a href="#">Modify search</a>
-        </small>
-    </h1>
+      <ul ng-if="rsCtrl.pager.pages.length" class="pagination">
+        <li ng-class="{disabled:rsCtrl.pager.currentPage === 1}">
+          <a ng-click="rsCtrl.setPage(1)">First</a>
+        </li>
+        <li ng-class="{disabled:rsCtrl.pager.currentPage === 1}">
+          <a ng-click="rsCtrl.setPage(vm.pager.currentPage - 1)">Previous</a>
+        </li>
+        <li ng-repeat="page in rsCtrl.pager.pages" ng-class="{active:rsCtrl.pager.currentPage === page}">
+          <a ng-click="rsCtrl.setPage(page)">{{page}}</a>
+        </li>
+        <li ng-class="{disabled:rsCtrl.pager.currentPage === rsCtrl.pager.totalPages}">
+          <a ng-click="vm.setPage(vm.pager.currentPage + 1)">Next</a>
+        </li>
+        <li ng-class="{disabled:rsCtrl.pager.currentPage === rsCtrl.pager.totalPages}">
+          <a ng-click="rsCtrl.setPage(rsCtrl.pager.totalPages)">Last</a>
+        </li>
+      </ul>
     </div>
   </div>
-  <!-- /.row -->
-
-  <!-- Projects Row -->
-  <div class="row" ng-if="!rsCtrl.flights">
-    <div class="well">
-      <blockquote>
-        <p>No flight available...</p>
-        <small>Modify your search</small>
-      </blockquote>
-    </div>
-    <div class="text-center" style="font-size:16px; padding-top:40px;">
-      <a href="">Go back to search</a>
-    </div>
-  </div>
-
-
-  <div class="row" ng-if="rsCtrl.flights">
-    <div class="col-xs-6 col-sm-4 col-md-3 portfolio-item" ng-repeat="item in rsCtrl.flights">
-      <flight element="item"></flight>
-    </div>
-
-    <hr>
-
-    <!-- Pagination -->
-    <div class="row text-center">
-      <div class="col-lg-12">
-        <ul class="pagination">
-          <li>
-            <a href="#">&laquo;</a>
-          </li>
-          <li ng-repeat="item in rsCtrl.flights" ng-class="{ 'active': $index == 0 }">
-            <a href="#">{{$index + 1}}</a>
-          </li>
-          <li>
-            <a href="#">&raquo;</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
+</div>

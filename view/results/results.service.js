@@ -1,16 +1,16 @@
 "use strict";
-define([], function () {
+define(['services/pager.service'], function () {
 
   angular.module("AppModule").register.factory("ResultsService", ResultsService);
 
-  ResultsService.$inject = ["$http"];
+  ResultsService.$inject = ["$http", "PagerService"];
 
-  function ResultsService($http) {
+  function ResultsService($http, service) {
     var urlSearchFlight = "http://ejtestbed.herokuapp.com/flights";
-
-    return {
-      getData: getData
-    }
+    
+    var resultsService = angular.extend(service);
+    resultsService.getData = getData;
+    return resultsService;
 
     function getData(callbackFn) {
       var objResponse = {};

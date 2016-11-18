@@ -47,8 +47,11 @@ define([], function () {
         controllerAs: 'rsCtrl',
         resolve: resolveController(["../view/results/results.controller"])
       })
+     .when("/search", {
+        templateUrl: "../view/search/search.html"
+      })
       .otherwise({
-        redirectTo: "/results",
+        redirectTo: "/search",
       })
   }; //configRoutes
   return configRoutes;
