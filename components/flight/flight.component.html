@@ -1,14 +1,141 @@
-<div class="box-flight">
-  <div class="box-information">
-    <span class="pull-right" style="position: relative;padding-top: 5px;padding-right:2px;color:white"> {{flCtrl.element.flightNumber.carrierCode}} - {{flCtrl.element.flightNumber.number}} </span>
-    <div style="position: relative;left: 11px;top: 36px;"><strong>DEP</strong>
-      <span style="margin-left:5px">{{ flCtrl.element.localDepartureTime | date:'medium' }}</span>
-    </div>
-    <div style="top: 40px;position: relative;left: 10px;"><strong>ARR</strong>
-      <span style="margin-left:5px">{{ flCtrl.element.localArrivalTime | date:'medium' }}</span>
+<div class="box-flight" style="cursor:pointer">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="box-information">
+        <span class="pull-right" style="position: relative;padding-top: 6px;padding-right:3px;color:white "> {{flCtrl.element.flightNumber.carrierCode}} - {{flCtrl.element.flightNumber.number}} </span>
+      </div>
     </div>
   </div>
-  <div>
-    <span style="top: 75px;position: relative;font-size: 40px;left: 120px;">{{ flCtrl.element.prices.adult.value}} €</span>
+  <div class="row">
+    <div class="col-xs-12">
+      <div style="margin:5px;font-size: 12.5px;"><strong>DEP</strong> {{ flCtrl.element.departureAirport }}
+      </div>
+    </div>
   </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div style="margin-left:5px; font-size: 12.5px;"><strong>ARR</strong> {{ flCtrl.element.arrivalAirport }}
+      </div>
+    </div>
+  </div>
+  <div class="row" style="margin-top:28px">
+
+    <div class="col-xs-12 " style="margin-right: -20px;">
+      <span class="pull-left btn btn-link" style="position: relative;
+    padding-top: 28px;
+    padding-right: 13px;
+    padding-left: 8px" data-toggle="modal" data-target="#_{{flCtrl.element.id}}">Details
+
+      </span>
+      <span class="pull-right" style="font-size: 40px;">{{ flCtrl.element.prices.adult.value | currency : "£" }}</span>
+    </div>
+  </div>
+
+  <div class="modal fade" id="_{{flCtrl.element.id}}" tabindex="-1" role="dialog" aria-labelledby="detailFlight">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+
+        <div class="modal-body">
+          <ul class="list-group">
+            <li class="list-group-item">
+              <strong>Flight number</strong>
+              <span class="pull-right">{{flCtrl.element.flightNumber.carrierCode}} -     {{flCtrl.element.flightNumber.number}}</span>
+            </li>
+            <li class="list-group-item">
+              <strong>Departure airport</strong>
+              <span class="pull-right"> {{ flCtrl.element.departureAirport }}</span>
+            </li>
+            <li class="list-group-item">
+              <strong>Departure airport code</strong>
+              <span class="pull-right">
+                {{ flCtrl.element.departureAirportCode }}
+              </span>
+            </li>
+            <li class="list-group-item">
+              <strong>Departure terminal</strong>
+              <span class="pull-right">
+                {{ flCtrl.element.depTerminalName }}
+              </span>
+            </li>
+            <li class="list-group-item">
+              <strong>Arrival airport</strong>
+              <span class="pull-right">
+                {{ flCtrl.element.arrivalAirport }}
+              </span>
+            </li>
+            <li class="list-group-item">
+              <strong>Arrival airport code</strong>
+              <span class="pull-right">
+                {{ flCtrl.element.arrivalAirportCode }}
+              </span>
+            </li>
+            <li class="list-group-item">
+              <strong>Local departure time</strong>
+              <span class="pull-right">
+                {{ flCtrl.element.localDepartureTime | date:'medium' }}
+              </span>
+            </li>
+            <li class="list-group-item">
+              <strong>Local arrival time</strong>
+              <span class="pull-right">
+                {{ flCtrl.element.localArrivalTime | date:'medium' }}
+              </span>
+            </li>
+            <li class="list-group-item">
+              <strong>Distrupted</strong>
+              <span class="pull-right">
+                {{ flCtrl.element.isDisrupted ? "YES" : "NO" }}
+              </span>
+            </li>
+            <li class="list-group-item">
+              <strong>Price adult</strong>
+              <span class="pull-right">
+                {{ flCtrl.element.prices.adult.value | currency : "£" }}
+              </span>
+            </li>
+            <li class="list-group-item">
+              <strong>Price adult (with debit card)</strong>
+              <span class="pull-right">
+                {{ flCtrl.element.prices.adult.valueWithDebitCard | currency : "£" }}
+              </span>
+            </li>
+            <li class="list-group-item">
+              <strong>Price adult (with credit card)</strong>
+              <span class="pull-right">
+                {{ flCtrl.element.prices.adult.valueWithCreditCard| currency : "£"  }}
+              </span>
+            </li>
+            <li class="list-group-item">
+              <strong>Price child</strong>
+              <span class="pull-right">
+                {{ flCtrl.element.prices.child.value | currency : "£" }}
+              </span>
+            </li>
+            <li class="list-group-item">
+              <strong>Price child (with debit card)</strong>
+              <span class="pull-right">
+                {{ flCtrl.element.prices.child.valueWithDebitCard | currency : "£" }}
+              </span>
+            </li>
+            <li class="list-group-item">
+              <strong>Price child (with credit card)</strong>
+              <span class="pull-right">
+                {{ flCtrl.element.prices.child.valueWithCreditCard | currency : "£" }}
+              </span>
+            </li>
+            <li class="list-group-item" ng-disabled="true">
+              <strong>Price infant</strong>
+              <span class="pull-right">
+                {{ flCtrl.element.prices.infant ? flCtrl.element.prices.infant  : "-"  }}
+              </span>
+            </li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
