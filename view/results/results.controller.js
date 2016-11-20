@@ -10,6 +10,7 @@ define(['view/results/results.service', 'css!view/results/results.style.css',
   function ResultsController(scope, service) {
     var vm = this;
     vm.flights = null;
+    vm.showFilters = false;
 
     angular.element("#overlayBox").show();
 
