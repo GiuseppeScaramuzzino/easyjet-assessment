@@ -1,33 +1,30 @@
-<div class="box-flight" style="cursor:pointer">
+<div class="box-flight">
   <div class="row">
     <div class="col-xs-12">
       <div class="box-information">
-        <span class="pull-right" style="position: relative;padding-top: 6px;padding-right:3px;color:white "> {{flCtrl.element.flightNumber.carrierCode}} - {{flCtrl.element.flightNumber.number}} </span>
+        <span class="pull-right flight-number"> {{flCtrl.element.flightNumber.carrierCode}} - {{flCtrl.element.flightNumber.number}} </span>
       </div>
     </div>
   </div>
   <div class="row">
     <div class="col-xs-12">
-      <div style="margin:5px;font-size: 12.5px;"><strong>DEP</strong> {{ flCtrl.element.departureAirport }}
+      <div class="flight-dep"><strong>DEP</strong> {{ flCtrl.element.departureAirport }}
       </div>
     </div>
   </div>
   <div class="row">
     <div class="col-xs-12">
-      <div style="margin-left:5px; font-size: 12.5px;"><strong>ARR</strong> {{ flCtrl.element.arrivalAirport }}
+      <div class="flight-dep"><strong>ARR</strong> {{ flCtrl.element.arrivalAirport }}
       </div>
     </div>
   </div>
-  <div class="row" style="margin-top:28px">
+  <div class="row row-price">
 
     <div class="col-xs-12 " style="margin-right: -20px;">
-      <span class="pull-left btn btn-link" style="position: relative;
-    padding-top: 28px;
-    padding-right: 13px;
-    padding-left: 8px" data-toggle="modal" data-target="#_{{flCtrl.element.id}}">Details
+      <span class="pull-left btn btn-link detail-link" data-toggle="modal" data-target="#_{{flCtrl.element.id}}">Details
 
       </span>
-      <span class="pull-right" style="font-size: 40px;">{{ flCtrl.element.prices.adult.value | currency : "£" }}</span>
+      <span class="pull-right price-flight">{{ flCtrl.element.prices.adult.value | currency : "£" }}</span>
     </div>
   </div>
 
@@ -85,6 +82,12 @@
               <strong>Distrupted</strong>
               <span class="pull-right">
                 <i ng-class="{'fa fa-check': flCtrl.element.isDisrupted, 'fa fa-remove': !flCtrl.element.isDisrupted}"></i>
+              </span>
+            </li>
+            <li class="list-group-item ">
+              <strong>Seats available</strong>
+              <span class="pull-right">
+                 {{ flCtrl.element.seatsAvailable }}
               </span>
             </li>
             <li class="list-group-item ">

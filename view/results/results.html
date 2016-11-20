@@ -12,34 +12,37 @@
   </div>
 </div>
 <!-- /.row -->
+
 <div ng-if="rsCtrl.showFilters">
   <div class="row">
     <div class="col-xs-12">
       <form class="form-inline">
         <div class="form-group">
           <label class="sr-only" for="departureAirport">Departure airport</label>
-          <input type="text" class="form-control" id="departureAirport" placeholder="Departure airport">
+          <input type="text" class="form-control" ng-model="rsCtrl.filters.departureAirport" id="departureAirport" placeholder="Departure airport">
         </div>
         <div class="form-group">
           <label class="sr-only" for="arrivalAirport">Arrival airport</label>
-          <input type="text" class="form-control" id="arrivalAirport" placeholder="Arrival airport">
+          <input type="text" class="form-control" ng-model="rsCtrl.filters.arrivalAirport" id="arrivalAirport" placeholder="Arrival airport">
         </div>
         <div class="form-group">
           <label class="sr-only" for="arrivalAirport">Departure airport code</label>
-          <input type="text" class="form-control" id="arrivalAirport" placeholder="Departure airport code">
+          <input type="text" class="form-control" id="arrivalAirport" ng-model="rsCtrl.filters.departureAirportCode" placeholder="Departure airport code">
         </div>
         <div class="form-group">
           <label class="sr-only" for="arrivalAirport">Arrival airport code</label>
-          <input type="text" class="form-control" id="arrivalAirport" placeholder="Arrival airport code">
+          <input type="text" class="form-control" ng-model="rsCtrl.filters.arrivalAirportCode" id="arrivalAirport" placeholder="Arrival airport code">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" ng-model="rsCtrl.filters.localDepartureTime" uib-datepicker-popup="M!/d!/yyyy" ng-model="dt" is-open="rsCtrl.isOpenCalendar" ng-click="rsCtrl.openCalendar()" close-text="Close" alt-input-formats="altInputFormats" placeholder="Local Departure Time" />
         </div>
         <div class="checkbox">
           <label>
-            <input type="checkbox"> Distrupted
+            <input type="checkbox" ng-model="rsCtrl.filters.isDisrupted"> Distrupted
           </label>
         </div>
-        <button type="submit" class="btn btn-default"><i class="fa fa-calendar"></i></button>
 
-        <button type="submit" class="btn btn-primary pull-right"><i class="fa fa-search"></i> Apply</button>
+        <button type="submit" class="btn btn-primary pull-right" ng-click="rsCtrl.applyFilters()"><i class="fa fa-search"></i> Apply</button>
       </form>
     </div>
   </div>
@@ -47,18 +50,17 @@
   <hr>
 </div>
 
-<!-- Projects Row -->
-<div class="row" ng-if="!rsCtrl.flights">
+<div class="row" ng-if="!rsCtrl.flightsToView || rsCtrl.flightsToView.length == 0">
   <div class="well">
     <blockquote>
       <p>No flight available...</p>
-      <small>Show filters</small>
+      <small>Change filters</small>
     </blockquote>
   </div>
 </div>
 
-<div class="row" ng-if="rsCtrl.flights">
-  <div class="col-xs-12 col-sm-4 col-md-3 portfolio-item" ng-repeat="item in rsCtrl.flights">
+<div class="row" ng-if="rsCtrl.flightsToView && rsCtrl.flightsToView.length > 0">
+  <div class="col-xs-12 col-sm-4 col-md-3 portfolio-item" ng-repeat="item in rsCtrl.flightsToView track by $index">
     <flight element="item"></flight>
   </div>
 
