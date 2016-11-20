@@ -5,8 +5,9 @@ var watchLess = require('gulp-watch-less');
 var less = require('gulp-less');
 var path = require('path');
 var jshint = require('gulp-jshint');
+var imagemin = require('gulp-imagemin');
 
-gulp.task('default', ['bower', 'less'], function () {
+gulp.task('default', ['bower', 'less', 'img'], function () {
 
 });
 
@@ -41,10 +42,10 @@ gulp.task('scripts', function () {
     .pipe(gulp.dest('html/scripts'));
 });
 
-gulp.task('images', function () {
-  return gulp.src('dev/images/*')
+gulp.task('img', function () {
+  return gulp.src('img/*')
     .pipe(imagemin())
-    .pipe(gulp.dest('html/images'));
+    .pipe(gulp.dest('img/*'));
 });
 
 gulp.task('styles', function () {
