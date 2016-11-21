@@ -19,6 +19,7 @@ Open terminal:
  git clone https://gitlab.com/ngScara/easyjet-assessment.git <br>
  cd easyjet-assessment <br>
  npm install <br>
+ npm install gulp -g<br>
  gulp <br>
  http-server -p 1234
 </pre>
