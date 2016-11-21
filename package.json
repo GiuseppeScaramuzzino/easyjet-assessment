@@ -13,6 +13,7 @@
     "jshint": "2.9.4"
   },
   "devDependencies": {
+    "angular-mocks": "^1.5.8",
     "gulp": "3.9.1",
     "gulp-bower": "0.0.13",
     "gulp-clean": "0.3.2",

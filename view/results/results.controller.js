@@ -1,9 +1,9 @@
 "use strict"
 
-define(['view/results/results.service', 'css!view/results/results.style.css',
-  'flight'], function () {
+define(['app','view/results/results.service', 'css!view/results/results.style.css',
+  'flight','angular'], function (app) {
 
-  angular.module("AppModule").register.controller('ResultsController', ResultsController);
+  app.register.controller('ResultsController', ResultsController);
 
   ResultsController.$inject = ["$scope", "ResultsService"];
 

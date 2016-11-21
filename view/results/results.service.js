@@ -1,7 +1,7 @@
 "use strict";
-define([], function () {
+define(['app'], function (app) {
 
-  angular.module("AppModule").register.factory("ResultsService", ResultsService);
+  app.register.factory("ResultsService", ResultsService);
 
   ResultsService.$inject = ["$http"];
 

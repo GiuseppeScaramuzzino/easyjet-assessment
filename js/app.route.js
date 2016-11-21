@@ -18,7 +18,6 @@ define([], function () {
 
     function getSettings(names) {
       var settings = require(names);
-      console.log(settings);
       return {
         templateUrl: "../view/results/results.html",
         controller: "ResultsController",
