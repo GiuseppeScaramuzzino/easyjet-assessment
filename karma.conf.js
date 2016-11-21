@@ -1,7 +1,7 @@
 // Karma configuration
 // Generated on Mon Nov 21 2016 09:06:10 GMT+0100 (ora solare Europa occidentale)
 
-module.exports = function(config) {
+module.exports = function (config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
@@ -16,15 +16,42 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       'test-main.js',
-      {pattern: 'node_modules/angular-mocks/*.js', included: false},
-      {pattern: 'bower_components/jquery/dist/jquery.min.js', included: false},
-      {pattern: 'js/*.js', included: false},
-      {pattern: 'view/**/*.js', included: false},
-      {pattern: 'components/**/*.js', included: false},
-      {pattern: 'bower_components/require-css/css.min.js', included: false},
-      {pattern: 'css/**/*.css', included: false},
-      {pattern: 'view/**/*.css', included: false},
-      {pattern: 'components/**/*.css', included: false},
+      {
+        pattern: 'node_modules/angular-mocks/*.js',
+        included: false
+      },
+      {
+        pattern: 'bower_components/jquery/dist/jquery.min.js',
+        included: false
+      },
+      {
+        pattern: 'js/*.js',
+        included: false
+      },
+      {
+        pattern: 'view/**/*.js',
+        included: false
+      },
+      {
+        pattern: 'components/**/*.js',
+        included: false
+      },
+      {
+        pattern: 'bower_components/require-css/css.min.js',
+        included: false
+      },
+      {
+        pattern: 'css/**/*.css',
+        included: false
+      },
+      {
+        pattern: 'view/**/*.css',
+        included: false
+      },
+      {
+        pattern: 'components/**/*.css',
+        included: false
+      },
     ],
 
 
@@ -35,8 +62,7 @@ module.exports = function(config) {
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-    preprocessors: {
-    },
+    preprocessors: {},
 
 
     // test results reporter to use
@@ -55,7 +81,7 @@ module.exports = function(config) {
 
     // level of logging
     // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-    logLevel: config.LOG_INFO,
+    logLevel: config.LOG_DEGUB,
 
 
     // enable / disable watching file and executing tests whenever any file changes

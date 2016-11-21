@@ -1,7 +1,7 @@
 "use strict";
 define(['app'], function (app) {
 
-  app.register.factory("ResultsService", ResultsService);
+  app.factory("ResultsService", ResultsService);
 
   ResultsService.$inject = ["$http"];
 

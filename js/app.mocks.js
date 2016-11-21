@@ -1,9 +1,7 @@
 define(['angular'], function () {
   "use strict";
 
-  var AppModule = angular.module('AppModule',[]);
-
-  AppModule.register = AppModule;
+  var AppModule = angular.module('AppModule', []);
 
   return AppModule;
 });

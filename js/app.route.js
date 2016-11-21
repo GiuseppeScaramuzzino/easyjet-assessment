@@ -6,25 +6,13 @@ define([], function () {
 
   function configRoutes($routeProvider, $controllerProvider, $provide, $compileProvider, $filterProvider) {
 
-    angular.module("AppModule").register = {
-      controller: $controllerProvider.register,
-      factory: $provide.factory,
-      directive: $compileProvider.directive,
-      filter: $filterProvider.register,
-      factory: $provide.factory,
-      service: $provide.service,
-      component: $compileProvider.component,
-    };
-
-    function getSettings(names) {
-      var settings = require(names);
-      return {
-        templateUrl: "../view/results/results.html",
-        controller: "ResultsController",
-        controllerAs: 'rsCtrl',
-        resolve: resolveController(["../view/results/results.settings"])
-      };
-    } //getSettings
+    angular.module("AppModule").controller = $controllerProvider.register;
+    angular.module("AppModule").factory = $provide.factory;
+    angular.module("AppModule").directive = $compileProvider.directive;
+    angular.module("AppModule").filter = $filterProvider.register;
+    angular.module("AppModule").factory = $provide.factory;
+    angular.module("AppModule").service = $provide.service;
+    angular.module("AppModule").component = $compileProvider.component;
 
     function resolveController(names) {
       return {
@@ -46,7 +34,7 @@ define([], function () {
         controllerAs: 'rsCtrl',
         resolve: resolveController(["../view/results/results.controller"])
       })
-     .when("/search", {
+      .when("/search", {
         templateUrl: "../view/search/search.html"
       })
       .otherwise({
