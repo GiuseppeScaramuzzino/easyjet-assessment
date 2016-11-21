@@ -25,7 +25,7 @@ define(['app', 'view/results/results.service', 'css!view/results/results.style.c
 
     angular.element("#overlayBox").show();
 
-    service.getData(function (response) {
+    service.getData().then(function (response) {
       angular.element("#overlayBox").hide();
 
       if (response.complete) {

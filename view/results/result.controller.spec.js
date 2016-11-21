@@ -93,7 +93,7 @@ define(['app', './results.controller.js'], function (app) {
         scope.$apply();
 
         // Since we called apply, not we can perform our assertions
-        expect(ResultsController.flights).toBeNull();
+        expect(ResultsController.flights).not.toBeNull();
       });
 
     });

@@ -12,15 +12,15 @@ define(['app'], function (app) {
       getData: getData
     };
 
-    function getData(callbackFn) {
+    function getData() {
       var objResponse = {};
-      $http.get(urlSearchFlight).then(function successCallback(response) {
+      return $http.get(urlSearchFlight).then(function successCallback(response) {
         objResponse.complete = true;
         objResponse.data = response.data;
-        callbackFn(objResponse);
+        return objResponse;
       }, function errorCallback(response) {
         objResponse.complete = false;
-        callbackFn(objResponse);
+        return objResponse;
       });
     } //searchFlights
 
