@@ -7,7 +7,7 @@ var path = require('path');
 var jshint = require('gulp-jshint');
 var imagemin = require('gulp-imagemin');
 
-gulp.task('default', ['bower', 'less', 'img'], function () {
+gulp.task('default', ['bower'], function () {
 
 });
 
