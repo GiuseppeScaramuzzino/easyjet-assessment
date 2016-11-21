@@ -21,6 +21,7 @@ Open terminal:
  npm install <br>
  npm install gulp -g (with Administrator permission)<br>
  gulp <br>
+ npm install http-server -g (with Administrator permission)<br>
  http-server -p 1234
 </pre>
 Open Chrome browser and copy address http://127.0.0.1:1234
