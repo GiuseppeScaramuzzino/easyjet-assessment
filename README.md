@@ -16,11 +16,11 @@ Mandatoty: git, node, npm
 
 Open terminal:
 
-> git clone https://gitlab.com/ngScara/easyjet-assessment.git
-> cd easyjet-assessment
-> npm install
-> gulp
-> http-server -p 1234
+ git clone https://gitlab.com/ngScara/easyjet-assessment.git <br/>
+ cd easyjet-assessment
+ npm install
+ gulp
+ http-server -p 1234
 
 Open Chrome browser and copy address http://127.0.0.1:1234
 
@@ -41,8 +41,8 @@ Mandatory: Karma, Jasmine, Chrome
 
 Open terminal:
 
-> cd easyjet-assessment
-> karma start
+ cd easyjet-assessment
+ karma start
 
 
 
