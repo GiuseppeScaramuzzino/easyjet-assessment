@@ -7,7 +7,7 @@ var path = require('path');
 var jshint = require('gulp-jshint');
 var imagemin = require('gulp-imagemin');
 
-gulp.task('default', ['bower', 'less', 'img'], function () {
+gulp.task('default', ['bower'], function () {
 
 });
 
@@ -19,11 +19,12 @@ gulp.task('lint', function () {
     }));
 });
 
+//download libs
 gulp.task('bower', function () {
   return bower();
 });
 
-
+//from less to css
 gulp.task('less', function () {
   gulp.src('**/**/*.less')
     .pipe(watchLess('**/**/*.less'))
@@ -33,15 +34,7 @@ gulp.task('less', function () {
     }));
 });
 
-gulp.task('scripts', function () {
-  gulp.src('dev/scripts/**/*.js')
-    .pipe(stripDebug())
-    .pipe(concat('main.js'))
-    .pipe(uglify())
-    .pipe(size())
-    .pipe(gulp.dest('html/scripts'));
-});
-
+//reduce size img
 gulp.task('img', function () {
   return gulp.src('img/*')
     .pipe(imagemin())
