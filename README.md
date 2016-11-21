@@ -12,37 +12,37 @@ Frameworks and Tools:
 
 Run command:
 
-Mandatoty: git, node, npm
+<strong>Mandatoty: git, node, npm</strong>
 
 Open terminal:
-
- git clone https://gitlab.com/ngScara/easyjet-assessment.git <br/>
- cd easyjet-assessment
- npm install
- gulp
+<pre>
+ git clone https://gitlab.com/ngScara/easyjet-assessment.git <br>
+ cd easyjet-assessment <br>
+ npm install <br>
+ gulp <br>
  http-server -p 1234
-
+</pre>
 Open Chrome browser and copy address http://127.0.0.1:1234
 
 
 ----------------------------------------------------------------------------------------------------------------------
 
 Dev command:
-
-gulp less = "compile less file to css"
-gulp img = "reduce img size"
-gulp lint = "find error in js file under js folder"
-
+<pre>
+gulp less = "compile less file to css" <br>
+gulp img = "reduce img size" <br>
+gulp lint = "find error in js file under js folder"<br>
+</pre>
 ----------------------------------------------------------------------------------------------------------------------
 
 Junit command:
 
-Mandatory: Karma, Jasmine, Chrome
-
+<strong>Mandatory: Karma, Jasmine, Chrome</strong>
+<pre>
 Open terminal:
 
- cd easyjet-assessment
+ cd easyjet-assessment<br>
  karma start
-
+</pre>
 
 
